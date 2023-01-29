@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import Link from 'next/link';
-import ConstantWideLayout from "./layouts/ConstantWideLayout";
 
 const TopHeader = () => {
     const [dateState, setDateState] = useState(new Date());

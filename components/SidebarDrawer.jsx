@@ -4,10 +4,12 @@ import { AppNavLinks } from "../constants";
 import { useRouter } from "next/router";
 import SocialIcons from "./SocialIcons";
 import { useSidebarStore } from "@/hooks/sidebar-store";
+import { useDarkMode } from "@/hooks/darkMode";
+import { BsMoonFill, BsSunFill } from "react-icons/bs";
 
 const SidebarDrawer = () => {
   const { sidebar, close } = useSidebarStore()
-
+  const [darkMode, toggle] = useDarkMode()
   // styling of sidebar links
   const linkStyle = {
     light: 'text-slate-700 hover:bg-gradient-to-t hover:from-slate-300 hover:to-slate-200 hover:border-slate-400 active:bg-gradient-to-b active:from-slate-300 active:to-slate-200',
@@ -32,7 +34,7 @@ const SidebarDrawer = () => {
       {/* Sidebar */}
       <aside
         className={`${sidebar ? "translate-x-0 shadow-xl shadow-slate-500" : "-translate-x-full"
-          } md:hidden bg-white/80 dark:bg-slate-800 transition duration-500 min-w-min w-80 max-w-[calc(100%-3rem)]  fixed top-0 left-0  h-screen z-50`}>
+          } md:hidden bg-white/80 dark:bg-slate-900 transition duration-500 min-w-min w-80 max-w-[calc(100%-3rem)]  fixed top-0 left-0  h-screen z-50`}>
 
         {/* close button */}
         <div className="flex group justify-end mb-2">
@@ -63,7 +65,18 @@ const SidebarDrawer = () => {
           </ul>
         </nav>
 
-        <div className="w-full flex justify-center mt-20 space-x-2">
+        <div className="flex justify-center">
+          <div className="border-2 dark:border-slate-700 py-2 px-3 rounded-3xl flex justify-center items-center my-10 ">
+            <span className="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300"><BsSunFill className={`${!darkMode && 'fill-amber-400'} text-xl`} /></span>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" onChange={toggle} checked={darkMode} className="sr-only peer" />
+              <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none  rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-sky-400 dark:peer-checked:bg-sky-600" />
+              <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"><BsMoonFill className={`${darkMode ? 'fill-amber-400' : 'text-slate-400'} text-xl`} /></span>
+            </label>
+          </div>
+        </div>
+
+        <div className="w-full flex justify-center space-x-2">
           <SocialIcons />
         </div>
       </aside>
