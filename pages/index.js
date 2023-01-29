@@ -15,10 +15,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <div className="my-py w-full">
+      <div className="w-full">
         <ConstantWideLayout className="px-4 md:px-6 lg:px-8">
           <div>
-            Hindi
+            Home
             {/* <Link href={`/students/register`} className="text-blue-500 underline">Register Student</Link> */}
           </div>
         </ConstantWideLayout>

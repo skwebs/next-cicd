@@ -48,7 +48,7 @@ const SidebarDrawer = () => {
           {/* navigation */}
           <ul className="flex flex-col pr-6">
             {AppNavLinks.map((link, index) => (
-              <li
+              <li onClick={close}
                 key={index}
                 className={`group font-semibold items-center flex text-slate-700 cursor-pointer rounded-r-full`}>
                 <Link href={link.href} onClick={() => close}

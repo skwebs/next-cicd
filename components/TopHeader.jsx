@@ -24,7 +24,7 @@ const TopHeader = () => {
             <div className="w-full py-1 bg-slate-50 dark:bg-slate-800">
                 <div className="px-4 md:px-6 lg:px-8">
 
-                    <div className="my-container">
+                    <div>
                         <div className="relative w-full flex md:justify-between md:items-center flex-col justify-start md:flex-row">
                             {/* left side */}
                             <div className="min-w-[230px] whitespace-nowrap font-semibold border-b dark:border-b-slate-700 md:border-none ">

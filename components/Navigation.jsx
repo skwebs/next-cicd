@@ -99,13 +99,12 @@ const Navigation = () => {
     <>
       <div className="w-full shadow dark:border-b dark:border-gray-700">
         <div className="px-4 md:px-6 lg:px-8">
-          <div className="my-container mx-auto">
+          <div className="mx-auto">
             <div className="flex justify-between">
               {/* left side */}
               <div className="flex items-center h-14">
                 <MdMenu
                   onClick={open}
-                  onMouseUp={(e) => ripple.create(e, 'light')}
                   className=" md:hidden text-5xl p-3 mr-3 hover:bg-slate-100 active:text-slate-600 active:bg-slate-200 rounded-full cursor-pointer  dark:hover:bg-white/10 dark:active:text-slate-300 dark:active:bg-white/20"
                 />
                 <Link href={`/`}>
