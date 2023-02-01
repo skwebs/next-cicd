@@ -29,5 +29,6 @@ jobs:
           SOURCE: "out/"
           REMOTE_HOST: ${{ secrets.SERVER }}
           REMOTE_USER: ${{ secrets.USERNAME }}
-          TARGET:  public_html/cicdftp # ${{ secrets.REMOTE_TARGET }}
+          REMOTE_PORT: ${{ secrets.PORT }}
+          TARGET:  ~/public_html/cicdftp # ${{ secrets.REMOTE_TARGET }}
           EXCLUDE: "/dist/, /node_modules/"
