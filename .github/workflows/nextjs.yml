@@ -26,3 +26,4 @@ jobs:
         private-ssh-key: ${{ secrets.SSH_KEY }}
         ssh-port: ${{ secrets.PORT }}
         destination-path: ~/public_html/next-cicd/
+        rsync-options: --dry-run --archive --verbose --compress --delete-after --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
