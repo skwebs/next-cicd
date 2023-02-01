@@ -24,5 +24,5 @@ jobs:
         target-server: ${{ secrets.SERVER }}
         remote-user: ${{ secrets.USERNAME }}
         private-ssh-key: ${{ secrets.SSH_KEY }}
-        ssh-port: ${{ secrets.SSH_KEY }}
+        ssh-port: ${{ secrets.PORT }}
         destination-path: ~/public_html/next-cicd/
