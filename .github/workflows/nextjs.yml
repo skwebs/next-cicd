@@ -1,7 +1,10 @@
+
+name: Publish Website
 on:
   push:
-    - server
-name: Publish Website
+    branches: ["server"]
+  pull_request:
+    branches: ["server"]
 jobs:
   web-deploy:
     name: 🚀 Deploy Website Every Commit
