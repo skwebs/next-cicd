@@ -1,20 +1,3 @@
-name: FTP Test
-
-on:
-  push:
-    branches: [master]
-
-jobs:
-  deploy:
-    name: 🚀 Deploy website every commit
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
-
-      - name: 📂 Sync files
-        uses: ./
-
 on:
   push:
     branches: ["ftp"]
@@ -32,6 +15,7 @@ jobs:
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      # uses: ./
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
