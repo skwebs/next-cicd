@@ -49,14 +49,10 @@ export function useDarkMode() {
         }
         document.documentElement.className = theme;
         setDarkMode(theme);
-
     }
 
-
     useEffect(() => {
-
         if (typeof (Storage) !== "undefined") {
-
             if (localStorage) {
                 theme = localStorage.getItem("theme")
             }
@@ -64,7 +60,6 @@ export function useDarkMode() {
         let isSubscribed = false;
         if (!isSubscribed) {
             // all code goes below
-
             window.matchMedia('(prefers-color-scheme: dark)')
                 .addEventListener('change', ({ matches }) => {
                     if (matches) {
@@ -73,7 +68,7 @@ export function useDarkMode() {
                         console.log("change to light mode!")
                     }
                 })
-
+                
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.className = "dark";
             } else {
