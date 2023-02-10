@@ -12,10 +12,13 @@ import Image from "next/image";
 
 const Navigation = () => {
 
+
   const { open } = useSidebarStore()
 
   const router = useRouter();
+
   const { pathname } = router;
+
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -57,16 +60,20 @@ const Navigation = () => {
                 </nav>
                 <div className="ml-2 flex justify-center items-center space-x-2 ">
 
+
                   <div className="m-2 hover:scale-110 transition-all">
                     <ThemeSwitch />
                   </div>
+
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
                     <div>
                       <Menu.Button className={`flex rounded-full bg-gray-800 text-sm focus:outline-none ring-transparent ring-4 hover:ring-gray-100 active:ring-gray-200 dark:hover:ring-gray-800 dark:active:ring-gray-700`}>
                         <span className="sr-only">Open user menu</span>
+
                         <Image src={logo} className="h-8 w-8 rounded-full" alt="Logo" />
+
                       </Menu.Button>
                     </div>
                     <Transition

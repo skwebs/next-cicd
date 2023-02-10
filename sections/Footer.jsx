@@ -3,6 +3,7 @@ import Brand from '@/components/Brand';
 import ConstantWideLayout from '@/components/layouts/ConstantWideLayout';
 import SocialIcons from '@/components/SocialIcons';
 
+
 const Footer = () => {
   return (
     <>
@@ -10,8 +11,11 @@ const Footer = () => {
 
         <ConstantWideLayout className="px-4 md:px-6 lg:px-8">
 
+
+
           {/* divider */}
-          <div className='my-container'>
+          <div>
+
             <hr className='w-full dark:border-slate-700' />
           </div>
           {/* footer from here */}
