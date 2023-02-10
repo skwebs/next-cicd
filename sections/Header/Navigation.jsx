@@ -2,21 +2,23 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AppNavLinks } from "../../constants";
 import { MdMenu } from "react-icons/md";
-import { BsSunFill, BsMoonFill, BsFillPersonFill } from 'react-icons/bs'
 import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-
+import { Menu, Transition } from '@headlessui/react'
+import logo from '@/assets/images/ama-180.png'
 import { useSidebarStore } from "@/hooks/sidebar-store";
-import { useDarkMode } from "@/hooks/darkMode";
 import { Brand } from "@/components";
+import ThemeSwitch from "@/components/ThemeSwitch";
+import Image from "next/image";
 
 const Navigation = () => {
-  const [darkMode, switchTheme] = useDarkMode();
+
 
   const { open } = useSidebarStore()
 
   const router = useRouter();
-  const { asPath, pathname } = router;
+
+  const { pathname } = router;
+
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -57,22 +59,21 @@ const Navigation = () => {
                   </ul>
                 </nav>
                 <div className="ml-2 flex justify-center items-center space-x-2 ">
-                  <button title={darkMode ? 'Disable Light Mode' : 'Enable Dark Mode'}
-                    className={`group p-2 text-slate-600 bg-slate-700/10 hover:bg-transparent hover:outline outline-2 outline-slate-300  active:outline-slate-500 dark:bg-white/10 dark:hover:outline-slate-700 dark:active:outline-slate-600 rounded-md group`}
-                    onClick={e => switchTheme(e)}>
-                    {darkMode === "dark" ? (<BsSunFill className="dark:group-hover:text-slate-300 text-slate-400" />) : (<BsMoonFill />)}
-                  </button>
+
+
+                  <div className="m-2 hover:scale-110 transition-all">
+                    <ThemeSwitch />
+                  </div>
+
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
                     <div>
                       <Menu.Button className={`flex rounded-full bg-gray-800 text-sm focus:outline-none ring-transparent ring-4 hover:ring-gray-100 active:ring-gray-200 dark:hover:ring-gray-800 dark:active:ring-gray-700`}>
                         <span className="sr-only">Open user menu</span>
-                        <img
-                          className="h-8 w-8 rounded-full"
-                          src="https://v1.anshumemorial.in/assets/static/img/ama/ama-128x128.png"
-                          alt=""
-                        />
+
+                        <Image src={logo} className="h-8 w-8 rounded-full" alt="Logo" />
+
                       </Menu.Button>
                     </div>
                     <Transition
