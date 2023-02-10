@@ -2,11 +2,11 @@ import { MdClose } from "react-icons/md";
 import Link from "next/link";
 import { AppNavLinks } from "../constants";
 import { useRouter } from "next/router";
-import SocialIcons from "./SocialIcons";
 import { useSidebarStore } from "@/hooks/sidebar-store";
 import { useDarkMode } from "@/hooks/darkMode";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import Head from "next/head";
+import { SocialIcons } from "@/components";
 
 const SidebarDrawer = () => {
   const { sidebar, close } = useSidebarStore()

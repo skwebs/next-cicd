@@ -1,5 +1,6 @@
-import { MainLayout } from '@/components'
-import '@/styles/globals.css'
+import MainLayout from '@/sections/MainLayout'
+import '@/styles/globals.scss'
+
 export default function App({ Component, pageProps }) {
   return (
     <>

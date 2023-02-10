@@ -1,6 +1,6 @@
-import Header from '../Header';
-import Footer from '../Footer';
-import SidebarDrawer from '../SidebarDrawer';
+import Header from '@/sections/Header'
+import Footer from './Footer'
+import SidebarDrawer from './SidebarDrawer'
 
 
 const MainLayout = ({ children }) => {

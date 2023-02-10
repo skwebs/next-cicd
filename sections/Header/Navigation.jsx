@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { AppNavLinks } from "../constants";
-import Brand from "./Brand";
+import { AppNavLinks } from "../../constants";
 import { MdMenu } from "react-icons/md";
 import { BsSunFill, BsMoonFill, BsFillPersonFill } from 'react-icons/bs'
 import { Fragment } from 'react'
@@ -9,6 +8,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 
 import { useSidebarStore } from "@/hooks/sidebar-store";
 import { useDarkMode } from "@/hooks/darkMode";
+import { Brand } from "@/components";
 
 const Navigation = () => {
   const [darkMode, switchTheme] = useDarkMode();
