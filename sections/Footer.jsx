@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Brand from './Brand';
-import ConstantWideLayout from './layouts/ConstantWideLayout';
-import SocialIcons from './SocialIcons';
+import Brand from '../components/Brand';
+import ConstantWideLayout from '../components/layouts/ConstantWideLayout';
+import SocialIcons from '../components/SocialIcons';
 
 const Footer = () => {
   return (
