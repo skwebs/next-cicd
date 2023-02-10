@@ -6,6 +6,7 @@ import SocialIcons from "./SocialIcons";
 import { useSidebarStore } from "@/hooks/sidebar-store";
 import { useDarkMode } from "@/hooks/darkMode";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
+import Head from "next/head";
 
 const SidebarDrawer = () => {
   const { sidebar, close } = useSidebarStore()
@@ -25,6 +26,9 @@ const SidebarDrawer = () => {
 
   return (
     <>
+      <Head>
+        <meta name="theme-name" content={darkMode ? 'darkblue' : 'white'} />
+      </Head>
       {/* Overlay */}
       <div
         onClick={close}
