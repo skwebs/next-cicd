@@ -61,7 +61,7 @@ const Navigation = () => {
                 <div className="ml-2 flex justify-center items-center space-x-2 ">
 
 
-                  <div className="m-2 hover:scale-110 transition-all">
+                  <div className="m-2  transition-all">
                     <ThemeSwitch />
                   </div>
 

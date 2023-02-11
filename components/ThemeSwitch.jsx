@@ -1,9 +1,9 @@
 
 import { useTheme } from "next-themes";
-import { BsSunFill, BsMoonFill } from 'react-icons/bs'
 import { RiContrastFill } from 'react-icons/ri'
+import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 import { useState, useEffect } from "react";
-RiContrastFill
+HiOutlineSun
 const ThemeSwitch = () => {
 
   const { systemTheme, theme, setTheme, resolvedTheme } = useTheme();
@@ -15,15 +15,33 @@ const ThemeSwitch = () => {
     setMounted(true);
   }, [])
 
+  function changeTheme() {
+    theme === "system" ? setTheme('dark') : theme === "dark" ? setTheme('light') : theme === "light" && setTheme('system');
+    console.log(theme)
+  }
   if (!mounted) return null;
-
+  // dark:text-sky-500 dark:hover:border-slate-700 dark:active:text-slate-300
   return (
+
     <>
-      {
-        theme === "system" ? <BsMoonFill title="Enable Dark Mode" className="w-6 h-6 text-gray-900 dark:fill-amber-400" role="button" onClick={() => setTheme('dark')} /> :
-          theme === "dark" ? <BsSunFill title="Enable Light Mode" className="w-6 h-6 text-yellow-500 " role="button" onClick={() => setTheme('light')} /> :
-            theme === "light" && <RiContrastFill title="Enable System Mode" className="w-6 h-6 scale-110 dark:text-yellow-500 " role="button" onClick={() => setTheme('system')} />
-      }
+      <button
+        title={`${theme === 'system' ? 'Enable Dark Mode' : theme === 'dark' ? 'Enable Light Mode' : theme === 'light' && 'Enable System Mode'}`}
+        onClick={() => changeTheme()}
+        className={`hover:border-slate-200 active:border-slate-300 dark:hover:border-slate-700 dark:active:border-slate-600 ${theme !== 'system' && 'text-sky-500'} rounded-md border-transparent border-2  p-1 bg-slate-100 dark:bg-slate-800`}
+      >
+        {/* {
+          theme === "system" ? (<RiContrastFill className="w-6 h-6" />) : (
+            <>
+              <HiOutlineSun className="w-6 h-6 dark:hidden" />
+              <HiOutlineMoon className="w-6 h-6 hidden dark:block dark:bg-transparent" />
+            </>
+          )
+        } */}
+        <>
+          <HiOutlineSun className="w-6 h-6 dark:hidden" />
+          <HiOutlineMoon className="w-6 h-6 hidden dark:block dark:bg-transparent" />
+        </>
+      </button>
     </>
   )
 };
