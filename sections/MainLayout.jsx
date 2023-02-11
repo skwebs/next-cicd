@@ -6,7 +6,7 @@ import SidebarDrawer from './SidebarDrawer'
 const MainLayout = ({ children }) => {
   return (
     <>
-      <div className='flex flex-col min-h-screen'>
+      <div className='flex flex-col min-h-screen overflow-x-hidden'>
 
         <header className='flex-grow-0 sticky top-0 left-0 z-40'>
           <Header />
