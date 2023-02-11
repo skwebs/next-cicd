@@ -69,7 +69,6 @@ const SidebarDrawer = () => {
 
         <div className="flex justify-center my-8">
           <ThemeSwitch />
-
         </div>
 
         <div className="w-full flex justify-center space-x-2">

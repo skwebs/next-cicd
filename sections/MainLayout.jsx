@@ -1,7 +1,7 @@
+import { ToastContainer } from 'react-toastify'
 import Footer from './Footer'
 import Header from './Header'
 import SidebarDrawer from './SidebarDrawer'
-
 
 const MainLayout = ({ children }) => {
   return (
@@ -22,6 +22,7 @@ const MainLayout = ({ children }) => {
 
       </div>
       <SidebarDrawer />
+      <ToastContainer />
     </>
   )
 }
